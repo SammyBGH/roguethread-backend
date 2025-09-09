@@ -27,8 +27,7 @@ const allowedOrigins = [process.env.FRONTEND_URL];
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (Postman, curl)
-      if (!origin) return callback(null, true);
+      if (!origin) return callback(null, true); // Allow Postman/curl
 
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
@@ -51,9 +50,9 @@ app.use("/api/contact", contact);
 app.use("/api/admin", admin);
 app.use("/api/newsletter", newsletter);
 
-// Serve frontend in production
+// Serve frontend from local Vite build
 if (process.env.NODE_ENV === "production") {
-  const buildPath = path.join(__dirname, "build");
+  const buildPath = path.join(__dirname, "../dressup/dist"); // <- adjust to your frontend build path
   app.use(express.static(buildPath));
 
   // Catch-all for client-side routing
