@@ -15,7 +15,7 @@ import newsletter from "./routes/newsletter.js";
 dotenv.config();
 const app = express();
 
-// Fix __dirname for ESM
+// Fix __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -24,11 +24,10 @@ app.use(express.json({ limit: "2mb" }));
 app.use(
   cors({
     origin: (origin, callback) => {
-      // allow requests without origin (e.g., server-to-server)
+      // Allow requests with no origin (like curl/postman)
       if (!origin) return callback(null, true);
 
-      const allowedOrigins = [process.env.FRONTEND_URL];
-      if (allowedOrigins.includes(origin)) {
+      if (origin === process.env.FRONTEND_URL) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
@@ -42,30 +41,28 @@ app.use(morgan("combined"));
 // Health check
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
-// API Routes
+// API routes
 app.use("/api/products", products);
 app.use("/api/orders", orders);
 app.use("/api/contact", contact);
 app.use("/api/admin", admin);
 app.use("/api/newsletter", newsletter);
 
-// Serve SPA in production
+// Serve frontend in production
 if (process.env.NODE_ENV === "production") {
   const buildPath = path.join(__dirname, "build");
   app.use(express.static(buildPath));
 
-  // fallback to index.html for SPA routes
+  // Catch-all for client-side routing
   app.get("*", (_req, res) => {
     res.sendFile(path.join(buildPath, "index.html"));
   });
 }
 
-// 404 handler
+// 404 & error handling
 app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
-
-// Error handler
 app.use((err, _req, res, _next) => {
   console.error(err);
   res.status(500).json({ error: "Internal server error" });
