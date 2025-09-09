@@ -9,7 +9,7 @@
       { "name": "Black", "hex": "#000000" },
       { "name": "Navy", "hex": "#001f3f" }
     ],
-    "image": "/images/t-shirt.jpg",
+    "image": "https://roguethread.vercel.app/images/t-shirt.jpg",
     "description": "A timeless cotton T-shirt with a relaxed fit, perfect for everyday wear."
   },
   {
@@ -21,7 +21,7 @@
       { "name": "Blue", "hex": "#1e3a8a" },
       { "name": "Black", "hex": "#000000" }
     ],
-    "image": "/images/denim-jacket.jpg",
+    "image": "https://roguethread.vercel.app/images/denim-jacket.jpg",
     "description": "Durable denim jacket with a modern cut. A wardrobe essential for layering."
   },
   {
@@ -34,7 +34,7 @@
       { "name": "Red", "hex": "#e63946" },
       { "name": "Grey", "hex": "#6c757d" }
     ],
-    "image": "/images/sneaker.jpg",
+    "image": "https://roguethread.vercel.app/images/sneaker.jpg",
     "description": "Lightweight sneakers with cushioned soles for maximum comfort."
   },
   {
@@ -47,7 +47,7 @@
       { "name": "Pink", "hex": "#ec4899" },
       { "name": "Green", "hex": "#22c55e" }
     ],
-    "image": "/images/summer-dress.jpg",
+    "image": "https://roguethread.vercel.app/images/summer-dress.jpg",
     "description": "Floral print summer dress made from breathable fabric, ideal for sunny days."
   },
   {
@@ -60,7 +60,7 @@
       { "name": "Black", "hex": "#000000" },
       { "name": "Maroon", "hex": "#800000" }
     ],
-    "image": "/images/sweater-black.jpg",
+    "image": "https://roguethread.vercel.app/images/sweater-black.jpg",
     "description": "Cozy hoodie with adjustable drawstrings and a kangaroo pocket."
   }
 ]
