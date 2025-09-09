@@ -1,18 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import path from "path";
-import { fileURLToPath } from "url";
 import helmet from "helmet";
 import morgan from "morgan";
+import path from "path";
+import { fileURLToPath } from "url";
 
 import products from "./routes/products.js";
 import orders from "./routes/orders.js";
 import contact from "./routes/contact.js";
 import admin from "./routes/admin.js";
 import newsletter from "./routes/newsletter.js";
-
-import ExpressError from "./utils/ExpressError.js"; // Make sure your class is exported as default
 
 dotenv.config();
 const app = express();
@@ -21,14 +19,16 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ------------------- Middlewares -------------------
+// ================== Middlewares ==================
 app.use(express.json({ limit: "2mb" }));
+app.use(helmet());
+app.use(morgan("combined"));
 
-// CORS: allow local dev + Vercel frontend
-const allowedOrigins =
-  process.env.NODE_ENV === "production"
-    ? [process.env.FRONTEND_URL]             // Only Vercel in production
-    : ["http://localhost:5173", process.env.FRONTEND_URL]; // Dev + Vercel
+// ================== CORS ==================
+const allowedOrigins = [
+  "http://localhost:5173", // Local dev
+  process.env.FRONTEND_URL  // Vercel frontend
+];
 
 app.use(
   cors({
@@ -42,38 +42,35 @@ app.use(
   })
 );
 
-app.use(helmet());
-app.use(morgan("combined"));
-
-// ------------------- Health Check -------------------
+// ================== Healthcheck ==================
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
-// ------------------- API Routes -------------------
+// ================== API Routes ==================
 app.use("/api/products", products);
 app.use("/api/orders", orders);
 app.use("/api/contact", contact);
 app.use("/api/admin", admin);
 app.use("/api/newsletter", newsletter);
 
-// ------------------- Serve Frontend (production) -------------------
-if (process.env.NODE_ENV === "production") {
-  // Frontend is hosted separately (Vercel), no static serving needed
-  console.log("⚡ Production mode: frontend is on Vercel, skipping static files");
-}
+// ================== Optional: Serve Frontend ==================
+// Only enable if frontend build is in this project (local or monorepo setup)
+// const buildPath = path.join(__dirname, "../dressup/dist");
+// app.use(express.static(buildPath));
+// app.get("*", (_req, res) => {
+//   res.sendFile(path.join(buildPath, "index.html"));
+// });
 
-// ------------------- Catch-all 404 -------------------
-app.all("*", (req, res, next) => {
-  next(new ExpressError(404, "Page not found"));
+// ================== 404 & Error Handling ==================
+app.use((req, res) => {
+  res.status(404).json({ error: "Route not found" });
 });
 
-// ------------------- Error Handler -------------------
 app.use((err, _req, res, _next) => {
-  const { statusCode = 500, message = "Internal server error" } = err;
   console.error(err.stack || err);
-  res.status(statusCode).json({ error: message });
+  res.status(500).json({ error: "Internal server error" });
 });
 
-// ------------------- Start Server -------------------
+// ================== Start Server ==================
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {
   console.log(`✅ API running on http://localhost:${PORT}`);
