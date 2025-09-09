@@ -15,27 +15,24 @@ const app = express();
 
 // ================== Middlewares ==================
 app.use(express.json({ limit: "2mb" }));
-
-// Safe CORS: allow local dev + Vercel frontend
-const allowedOrigins =
-  process.env.NODE_ENV === "production"
-    ? [process.env.FRONTEND_URL]                     // only Vercel in production
-    : ["http://localhost:5173", process.env.FRONTEND_URL]; // Dev + Vercel
-
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin) return callback(null, true); // allow Postman/curl
-      if (allowedOrigins.includes(origin)) return callback(null, true);
-      console.warn(`Blocked CORS request from origin: ${origin}`);
-      return callback(new Error("Not allowed by CORS"));
-    },
-    optionsSuccessStatus: 200,
-  })
-);
-
 app.use(helmet());
 app.use(morgan("combined"));
+
+// ================== CORS ==================
+const allowedOrigins = [
+  "http://localhost:5173",            // Local dev
+  process.env.FRONTEND_URL            // Vercel frontend
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true); // Allow Postman/curl
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    console.warn(`Blocked CORS request from origin: ${origin}`);
+    return callback(new Error("Not allowed by CORS"));
+  },
+  optionsSuccessStatus: 200
+}));
 
 // ================== Healthcheck ==================
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
