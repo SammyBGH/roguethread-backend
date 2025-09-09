@@ -1,0 +1,66 @@
+[
+  {
+    "sku": "P001",
+    "name": "Classic White T-Shirt",
+    "price": 19.99,
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "White", "hex": "#ffffff" },
+      { "name": "Black", "hex": "#000000" },
+      { "name": "Navy", "hex": "#001f3f" }
+    ],
+    "image": "/images/t-shirt.jpg",
+    "description": "A timeless cotton T-shirt with a relaxed fit, perfect for everyday wear."
+  },
+  {
+    "sku": "P002",
+    "name": "Denim Jacket",
+    "price": 59.99,
+    "sizes": ["M", "L", "XL"],
+    "colors": [
+      { "name": "Blue", "hex": "#1e3a8a" },
+      { "name": "Black", "hex": "#000000" }
+    ],
+    "image": "/images/denim-jacket.jpg",
+    "description": "Durable denim jacket with a modern cut. A wardrobe essential for layering."
+  },
+  {
+    "sku": "P003",
+    "name": "Sneakers",
+    "price": 74.5,
+    "sizes": ["40", "41", "42", "43", "44"],
+    "colors": [
+      { "name": "White", "hex": "#ffffff" },
+      { "name": "Red", "hex": "#e63946" },
+      { "name": "Grey", "hex": "#6c757d" }
+    ],
+    "image": "/images/sneaker.jpg",
+    "description": "Lightweight sneakers with cushioned soles for maximum comfort."
+  },
+  {
+    "sku": "P004",
+    "name": "Summer Dress",
+    "price": 45.0,
+    "sizes": ["S", "M", "L"],
+    "colors": [
+      { "name": "Yellow", "hex": "#facc15" },
+      { "name": "Pink", "hex": "#ec4899" },
+      { "name": "Green", "hex": "#22c55e" }
+    ],
+    "image": "/images/summer-dress.jpg",
+    "description": "Floral print summer dress made from breathable fabric, ideal for sunny days."
+  },
+  {
+    "sku": "P005",
+    "name": "Hoodie Sweatshirt",
+    "price": 39.99,
+    "sizes": ["M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "Grey", "hex": "#6b7280" },
+      { "name": "Black", "hex": "#000000" },
+      { "name": "Maroon", "hex": "#800000" }
+    ],
+    "image": "/images/sweater-black.jpg",
+    "description": "Cozy hoodie with adjustable drawstrings and a kangaroo pocket."
+  }
+]

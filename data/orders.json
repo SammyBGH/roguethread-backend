@@ -1,0 +1,471 @@
+[
+  {
+    "id": "melzylv1",
+    "customer": {
+      "name": "Samuel Akwasi Boakye",
+      "email": "sammylemon69@gmail.com",
+      "address": "Dompoase, Kumasi, Ghana",
+      "payment": "momo"
+    },
+    "items": [
+      {
+        "product": {
+          "sku": "P002",
+          "name": "Denim Jacket",
+          "price": 59.99,
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            {
+              "name": "Blue",
+              "hex": "#1e3a8a"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ],
+          "image": "/images/denim-jacket.jpg",
+          "description": "Durable denim jacket with a modern cut. A wardrobe essential for layering."
+        },
+        "selection": {
+          "size": "M",
+          "color": {
+            "name": "Blue",
+            "hex": "#1e3a8a"
+          }
+        },
+        "quantity": 1
+      }
+    ],
+    "createdAt": "2025-08-21T22:52:33.709Z"
+  },
+  {
+    "id": "mem028oa",
+    "customer": {
+      "name": "Samuel Akwasi Boakye",
+      "email": "sammylemon69@gmail.com",
+      "address": "Dompoase, Kumasi, Ghana",
+      "payment": "momo"
+    },
+    "items": [
+      {
+        "product": {
+          "sku": "P002",
+          "name": "Denim Jacket",
+          "price": 59.99,
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            {
+              "name": "Blue",
+              "hex": "#1e3a8a"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ],
+          "image": "/images/denim-jacket.jpg",
+          "description": "Durable denim jacket with a modern cut. A wardrobe essential for layering."
+        },
+        "selection": {
+          "size": "M",
+          "color": {
+            "name": "Blue",
+            "hex": "#1e3a8a"
+          }
+        },
+        "quantity": 1
+      },
+      {
+        "product": {
+          "sku": "P004",
+          "name": "Summer Dress",
+          "price": 45,
+          "sizes": [
+            "S",
+            "M",
+            "L"
+          ],
+          "colors": [
+            {
+              "name": "Yellow",
+              "hex": "#facc15"
+            },
+            {
+              "name": "Pink",
+              "hex": "#ec4899"
+            },
+            {
+              "name": "Green",
+              "hex": "#22c55e"
+            }
+          ],
+          "image": "/images/summer-dress.jpg",
+          "description": "Floral print summer dress made from breathable fabric, ideal for sunny days."
+        },
+        "selection": {
+          "size": "S",
+          "color": {
+            "name": "Yellow",
+            "hex": "#facc15"
+          }
+        },
+        "quantity": 1
+      }
+    ],
+    "createdAt": "2025-08-21T22:55:23.243Z"
+  },
+  {
+    "id": "mem058km",
+    "customer": {
+      "name": "Samuel Akwasi Boakye",
+      "email": "sammylemon69@gmail.com",
+      "address": "Dompoase, Kumasi, Ghana",
+      "payment": "card"
+    },
+    "items": [
+      {
+        "product": {
+          "sku": "P001",
+          "name": "Classic White T-Shirt",
+          "price": 19.99,
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#ffffff"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            },
+            {
+              "name": "Navy",
+              "hex": "#001f3f"
+            }
+          ],
+          "image": "/images/t-shirt.jpg",
+          "description": "A timeless cotton T-shirt with a relaxed fit, perfect for everyday wear."
+        },
+        "selection": {
+          "size": "XL",
+          "color": {
+            "name": "White",
+            "hex": "#ffffff"
+          }
+        },
+        "quantity": 1
+      },
+      {
+        "product": {
+          "sku": "P005",
+          "name": "Hoodie Sweatshirt",
+          "price": 39.99,
+          "sizes": [
+            "M",
+            "L",
+            "XL",
+            "XXL"
+          ],
+          "colors": [
+            {
+              "name": "Grey",
+              "hex": "#6b7280"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            },
+            {
+              "name": "Maroon",
+              "hex": "#800000"
+            }
+          ],
+          "image": "/images/sweater-black.jpg",
+          "description": "Cozy hoodie with adjustable drawstrings and a kangaroo pocket."
+        },
+        "selection": {
+          "size": "XXL",
+          "color": {
+            "name": "Grey",
+            "hex": "#6b7280"
+          }
+        },
+        "quantity": 2
+      }
+    ],
+    "createdAt": "2025-08-21T22:57:43.079Z"
+  },
+  {
+    "id": "mem29ezb",
+    "customer": {
+      "name": "Samuel Akwasi Boakye",
+      "email": "sammylemon69@gmail.com",
+      "address": "Dompoase, Kumasi, Ghana",
+      "payment": "momo"
+    },
+    "items": [
+      {
+        "product": {
+          "sku": "P002",
+          "name": "Denim Jacket",
+          "price": 59.99,
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            {
+              "name": "Blue",
+              "hex": "#1e3a8a"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ],
+          "image": "/images/denim-jacket.jpg",
+          "description": "Durable denim jacket with a modern cut. A wardrobe essential for layering."
+        },
+        "selection": {
+          "size": "M",
+          "color": {
+            "name": "Blue",
+            "hex": "#1e3a8a"
+          }
+        },
+        "quantity": 1
+      }
+    ],
+    "createdAt": "2025-08-21T23:56:57.239Z"
+  },
+  {
+    "id": "mem4bfvx",
+    "customer": {
+      "name": "Samuel Akwasi Boakye",
+      "email": "sammylemon69@gmail.com",
+      "address": "Dompoase, Kumasi, Ghana",
+      "payment": "momo"
+    },
+    "items": [
+      {
+        "product": {
+          "sku": "P004",
+          "name": "Summer Dress",
+          "price": 45,
+          "sizes": [
+            "S",
+            "M",
+            "L"
+          ],
+          "colors": [
+            {
+              "name": "Yellow",
+              "hex": "#facc15"
+            },
+            {
+              "name": "Pink",
+              "hex": "#ec4899"
+            },
+            {
+              "name": "Green",
+              "hex": "#22c55e"
+            }
+          ],
+          "image": "/images/summer-dress.jpg",
+          "description": "Floral print summer dress made from breathable fabric, ideal for sunny days."
+        },
+        "selection": {
+          "size": "S",
+          "color": {
+            "name": "Yellow",
+            "hex": "#facc15"
+          }
+        },
+        "quantity": 1
+      }
+    ],
+    "createdAt": "2025-08-22T00:54:30.958Z"
+  },
+  {
+    "id": "mem4ty54",
+    "customer": {
+      "name": "dsffd",
+      "email": "dsvrhgcsv@gmail.com",
+      "address": "chgchjh",
+      "payment": "momo"
+    },
+    "items": [
+      {
+        "product": {
+          "sku": "P002",
+          "name": "Denim Jacket",
+          "price": 59.99,
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            {
+              "name": "Blue",
+              "hex": "#1e3a8a"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            }
+          ],
+          "image": "/images/denim-jacket.jpg",
+          "description": "Durable denim jacket with a modern cut. A wardrobe essential for layering."
+        },
+        "selection": {
+          "size": "XL",
+          "color": {
+            "name": "Blue",
+            "hex": "#1e3a8a"
+          }
+        },
+        "quantity": 1
+      },
+      {
+        "product": {
+          "sku": "P001",
+          "name": "Classic White T-Shirt",
+          "price": 19.99,
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#ffffff"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            },
+            {
+              "name": "Navy",
+              "hex": "#001f3f"
+            }
+          ],
+          "image": "/images/t-shirt.jpg",
+          "description": "A timeless cotton T-shirt with a relaxed fit, perfect for everyday wear."
+        },
+        "selection": {
+          "size": "XL",
+          "color": {
+            "name": "White",
+            "hex": "#ffffff"
+          }
+        },
+        "quantity": 2
+      }
+    ],
+    "createdAt": "2025-08-22T01:08:54.424Z"
+  },
+  {
+    "id": "memp3x6h",
+    "customer": {
+      "name": "Samuel Akwasi Boakye",
+      "email": "sammylemon69@gmail.com",
+      "address": "Dompoase, Kumasi, Ghana\nMount Sinia",
+      "payment": "card"
+    },
+    "items": [
+      {
+        "product": {
+          "sku": "P001",
+          "name": "Classic White T-Shirt",
+          "price": 19.99,
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            {
+              "name": "White",
+              "hex": "#ffffff"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            },
+            {
+              "name": "Navy",
+              "hex": "#001f3f"
+            }
+          ],
+          "image": "/images/t-shirt.jpg",
+          "description": "A timeless cotton T-shirt with a relaxed fit, perfect for everyday wear."
+        },
+        "selection": {
+          "size": "L",
+          "color": {
+            "name": "White",
+            "hex": "#ffffff"
+          }
+        },
+        "quantity": 2
+      },
+      {
+        "product": {
+          "sku": "P005",
+          "name": "Hoodie Sweatshirt",
+          "price": 39.99,
+          "sizes": [
+            "M",
+            "L",
+            "XL",
+            "XXL"
+          ],
+          "colors": [
+            {
+              "name": "Grey",
+              "hex": "#6b7280"
+            },
+            {
+              "name": "Black",
+              "hex": "#000000"
+            },
+            {
+              "name": "Maroon",
+              "hex": "#800000"
+            }
+          ],
+          "image": "/images/sweater-black.jpg",
+          "description": "Cozy hoodie with adjustable drawstrings and a kangaroo pocket."
+        },
+        "selection": {
+          "size": "XXL",
+          "color": {
+            "name": "Grey",
+            "hex": "#6b7280"
+          }
+        },
+        "quantity": 1
+      }
+    ],
+    "createdAt": "2025-08-22T10:36:32.057Z"
+  }
+]
