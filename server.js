@@ -22,18 +22,21 @@ const __dirname = path.dirname(__filename);
 // Middleware
 app.use(express.json({ limit: "2mb" }));
 
-// Safe CORS
-const allowedOrigins = [process.env.FRONTEND_URL];
+// CORS setup: allow local dev + Vercel frontend
+const allowedOrigins =
+  process.env.NODE_ENV === "production"
+    ? [process.env.FRONTEND_URL]                     // Vercel only in production
+    : ["http://localhost:5173", process.env.FRONTEND_URL]; // Dev + Vercel
+
 app.use(
   cors({
     origin: (origin, callback) => {
       if (!origin) return callback(null, true); // Allow Postman/curl
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      console.warn(`Blocked CORS request from origin: ${origin}`);
       return callback(new Error("Not allowed by CORS"));
     },
+    optionsSuccessStatus: 200,
   })
 );
 
@@ -50,9 +53,9 @@ app.use("/api/contact", contact);
 app.use("/api/admin", admin);
 app.use("/api/newsletter", newsletter);
 
-// Serve frontend from local Vite build
+// Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-  const buildPath = path.join(__dirname, "../dressup/dist"); // <- adjust to your frontend build path
+  const buildPath = path.join(__dirname, "../dressup/dist"); // Adjust to your frontend build folder
   app.use(express.static(buildPath));
 
   // Catch-all for client-side routing
