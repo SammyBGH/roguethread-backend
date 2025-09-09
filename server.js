@@ -3,8 +3,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
-import helmet from "helmet";
-import morgan from "morgan";
 
 import products from "./routes/products.js";
 import orders from "./routes/orders.js";
@@ -15,17 +13,17 @@ import newsletter from "./routes/newsletter.js";
 dotenv.config();
 const app = express();
 
-// Fix __dirname in ESM
+// ================== Fix __dirname in ESM ==================
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middleware
+// ================== Middleware ==================
 app.use(express.json({ limit: "2mb" }));
 
-// CORS setup: allow local dev + Vercel frontend
+// CORS: allow localhost (dev) + Vercel frontend (prod)
 const allowedOrigins =
   process.env.NODE_ENV === "production"
-    ? [process.env.FRONTEND_URL]                     // Vercel only in production
+    ? [process.env.FRONTEND_URL] // Only Vercel in production
     : ["http://localhost:5173", process.env.FRONTEND_URL]; // Dev + Vercel
 
 app.use(
@@ -40,22 +38,22 @@ app.use(
   })
 );
 
-app.use(helmet());
-app.use(morgan("combined"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Health check
+// ================== Healthcheck ==================
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
-// API routes
+// ================== API Routes ==================
 app.use("/api/products", products);
 app.use("/api/orders", orders);
 app.use("/api/contact", contact);
 app.use("/api/admin", admin);
 app.use("/api/newsletter", newsletter);
 
-// Serve frontend in production
+// ================== Serve Frontend (production) ==================
 if (process.env.NODE_ENV === "production") {
-  const buildPath = path.join(__dirname, "../dressup/dist"); // Adjust to your frontend build folder
+  const buildPath = path.join(__dirname, "../dressup/dist"); // adjust to your frontend build folder
   app.use(express.static(buildPath));
 
   // Catch-all for client-side routing
@@ -64,16 +62,17 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// 404 & error handling
+// ================== Error Handling ==================
 app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
+
 app.use((err, _req, res, _next) => {
   console.error(err.stack || err);
   res.status(500).json({ error: "Internal server error" });
 });
 
-// Start server
+// ================== Start Server ==================
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {
   console.log(`✅ API running on http://localhost:${PORT}`);
